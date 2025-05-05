@@ -1,0 +1,506 @@
+body {
+    font-family: 'Fredoka', sans-serif;
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f6f6f6;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 100px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #f6f6f6;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+img {
+    height: 60px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: #371804;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0.5rem;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #009419;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #009419;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Menu responsivo */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background-color: #ffffff;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: #f6f6f6;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        transition: left 0.3s ease;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+/* Seções da homepage */
+.banner {
+    background-image: url('imgfundo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 1rem 1rem;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    min-height: 400px;
+    
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.banner h1,
+.banner p,
+.banner a {
+    position: relative;
+    z-index: 2;
+}
+
+.banner h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.banner p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+/* Estilo do link na banner igual aos nav-links */
+.banner a {
+    color: #371804;  /* Cor do texto */
+    text-decoration: none;
+    font-size: 2rem;  /* Aumentando o tamanho do texto */
+    font-weight: 500;
+    transition: color 0.3s ease, border-color 0.3s ease; /* Transição suave para a cor do texto e da borda */
+    padding: 0.7rem 1.5rem;  /* Aumentando o espaçamento do link */
+    position: relative;
+    background-color: #f6f6f6;  /* Cor de fundo do quadrado */
+    border: 2px solid #f6f6f6;  /* Borda com a mesma cor do fundo */
+    border-radius: 5px;
+}
+
+.banner a:hover {
+    color: #009419;  /* Mudança de cor do texto ao passar o mouse */
+    border-color: #009419;  /* Mudança de cor da borda ao passar o mouse */
+}
+
+.banner a::after {
+    display: none;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #009419;  /* Cor do efeito */
+    transition: width 0.3s ease; /* Transição suave para o aumento da largura */
+}
+
+.banner a:hover::after {
+    width: 100%; /* O efeito aumenta de largura para cobrir todo o link */
+}
+
+section {
+    padding: 4rem 2rem;
+    background-color: #f6f6f6;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: #2d5014;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card comum - estilo básico */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card h3 {
+    position: relative;
+    z-index: 2;
+    color: #f6f6f6; /* Off-white */
+    text-shadow: 1px 1px 2px #000000; /* sombra leve */
+    -webkit-text-stroke: 0.5px #000000; /* contorno preto */
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Fundo individual por card */
+.card.produtos {
+    background-image: url('produtos.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card.cotacoes {
+    background-image: url('cotacao.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Ajustado para ficar mais no topo */
+    padding: 2rem 2rem 4rem; /* Ajuste no padding inferior para mais espaçamento */
+    position: relative;
+    overflow: hidden;
+    font-size: 13px;
+}
+
+.card.cotacoes h3 {
+    font-size: 2.5rem;
+    color: #f6f6f6;
+    text-shadow: 2px 2px 3px #000000;
+    -webkit-text-stroke: 0.5px #000000;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 3;
+}
+
+.precos-container {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-grow: 1; /* Garante que ocupe o espaço restante */
+    margin-top: 2rem; /* Dá mais espaço entre os preços e os outros elementos */
+}
+
+.precos-container p {
+    cursor: default;
+}
+
+.preco-item {
+    background-color: rgba(255, 255, 255, 0.8); /* Ajuste para mais opacidade */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Melhoria no contraste */
+    border-radius: 12px;
+    width: 120px; /* Aumentando o tamanho dos itens */
+    height: 120px; /* Ajustando altura */
+    color: #2d5014; /* Alterando para uma cor mais contrastante */
+    text-align: center;
+    padding: 1rem; /* Melhor espaçamento */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: none; /* Removendo o desfoque */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Ajuste da sombra */
+    transition: transform 0.3s ease;
+}
+
+.preco-item h4 {
+    font-size: 1.5rem;
+    font-weight: 600;  /* Mantendo um peso de fonte mais forte, igual ao h3 */
+    color: #2d5014;    /* Cor da fonte, igual ao estilo dos outros títulos */
+}
+
+.cotacoes-lista {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    font-size: 1.3rem;
+}
+
+.cotacoes-lista li {
+    margin: 0.5rem 0;
+}
+
+.cotacoes-fonte {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 1rem;
+}
+
+
+.card.associados {
+    background-image: url('associados.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Camada escura com opacidade */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+/* Estilo de texto */
+.card h3{
+    font-size: 2.5rem;
+}
+.card p {
+    position: relative;
+    z-index: 2;
+    color: #f6f6f6; /* Cor do texto */
+    margin: 0.5rem 0;
+    text-shadow: 1px 1px 2px #000000; /* sombra leve para destacar */
+    -webkit-text-stroke: 0.5px #000000; /* borda fina preta */
+    font-size: 1.5rem;
+}
+
+/* Link no card */
+.card a {
+    position: relative;
+    z-index: 3;
+    color: #f6f6f6;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 2px #000000; /* sombra leve para destacar */
+    -webkit-text-stroke: 0.5px #000000; /* borda fina preta */
+}
+
+.card a:hover {
+    color: #009419; /* Verde no hover */
+}
+
+/* Linha de destaque no hover */
+.card a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #009419;
+    transition: width 0.3s ease;
+}
+
+.card a:hover::after {
+    width: 100%;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .card {
+        height: auto;
+    }
+}
+
+.aviso-simulacao {
+    position: absolute;
+    bottom: 30px; /* Diminui a distância do fundo */
+    left: 10px;
+    font-size: 1.15rem;
+    color: #000000;
+    font-style: italic;
+    z-index: 2;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.btn-mais-valores {
+    display: block;
+    width: fit-content;
+    margin: 1rem auto 1rem auto; /* Ajuste para centralizar */
+}
+
+.card.noticias {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('noticias.jpg');
+    background-size: cover;
+    background-position: center center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.noticias h3 {
+    font-size: 1rem; /* Diminuímos o tamanho da fonte */
+    color: #f6f6f6;
+    margin-bottom: 1.5rem;
+    padding-top: 1rem;
+}
+
+.noticias-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Reduzimos o tamanho mínimo */
+    gap: 1.5rem; /* Reduzimos o gap entre as caixas */
+    width: 100%;
+    margin-top: 1px;
+    box-sizing: border-box;
+}
+
+.noticia-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem; /* Diminuímos o padding das caixas */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.noticia-item h4 {
+    font-size: 1.4rem; /* Reduzimos o tamanho da fonte do título */
+    color: #2d5014;
+    margin-bottom: 1rem; /* Menor espaço abaixo do título */
+}
+
+.noticia-item p {
+    font-size: 1rem; /* Diminuímos o tamanho da fonte da descrição */
+    color: #371804;
+    margin-bottom: 1rem; /* Menor distância abaixo da descrição */
+}
+
+/* Ajustes de responsividade para garantir que as caixas não fiquem muito grandes */
+@media (max-width: 768px) {
+    .card.noticias {
+        padding: 1rem; /* Reduz a margem interna para telas menores */
+    }
+
+    .noticias-container {
+        grid-template-columns: 1fr; /* Para telas menores, mostrar uma coluna */
+    }
+}
+
+
+
+footer {
+    background-color: #2d5014;
+    color: #ffffff;
+    padding: 2rem;
+    text-align: center;
+}

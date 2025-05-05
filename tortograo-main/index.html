@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>TortoGrão</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="cotacoes.js"></script>
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo"><img src="tortograo.png" alt="Logo"></a>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="a-tortograo.html">A TortoGrão</a></li>
+                <li><a href="produto.html">Produtos</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="trabalhe-conosco.html">Trabalhe Conosco</a></li>
+                <li><a href="copa-torto.html">Copa Torto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Banner institucional -->
+        <section class="banner">
+            <div class="container">
+                <h1>Bem-vindo à TortoGrão</h1>
+                <p>Fortalecendo o campo, conectando pessoas.</p>
+                <a href="a-tortograo.html" class="btn-destaque">Conheça nossa história</a>
+            </div>
+        </section>
+
+        <!-- Destaques rápidos -->
+        <section class="destaques">
+            <div class="container">
+                <div class="card noticias">
+                    <h3>Últimas Notícias</h3>
+                    <div class="noticias-container">
+                        <div class="noticia-item">
+                            <h4>Chile passará a comprar carne suína do Paraná</h4>
+                            <p>País reconheceu estado brasileiro como zona livre de aftosa sem vacinação, uma demanda antiga dos produtores paranaenses.</p>
+                        </div>
+                        <div class="noticia-item">
+                            <h4>Safra de verão de milho no PR tem bom resultado, mas calor castiga a safrinha</h4>
+                            <p>Enquanto a primeira safra surpreende com altos rendimentos, a safrinha enfrenta perdas causadas pelas altas temperaturas no oeste do estado.</p>
+                        </div>
+                        <div class="noticia-item">
+                            <h4>Paraná lança fundo inédito de R$ 2 bilhões para impulsionar o agro</h4>
+                            <p>Modelo alternativo ao Plano Safra busca ampliar acesso ao crédito com juros subsidiados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card cotacoes">
+                    <h3>Cotações do Dia</h3>
+                    <div class="precos-container">
+                        <div class="preco-item">
+                            <h4>Soja</h4>
+                            <div id="preco-soja" class="price-value loading">Carregando...</div>
+                            <div id="fonte-soja" class="price-source"></div>
+                        </div>
+                        
+                        <div class="preco-item">
+                            <h4>Milho</h4>
+                            <div id="preco-milho" class="price-value loading">Carregando...</div>
+                            <div id="fonte-milho" class="price-source"></div>
+                        </div>
+                        <div class="preco-item">
+                            <h4>Trigo</h4>
+                            <div id="preco-trigo" class="price-value loading">Carregando...</div>
+                            <div id="fonte-trigo" class="price-source"></div>
+                        </div>
+                        <div class="preco-item">
+                            <h4>Feijão</h4>
+                            <div id="preco-feijao" class="price-value loading">Carregando...</div>
+                            <div id="fonte-feijao" class="price-source"></div>
+                        </div>
+                    </div>
+                    <script src="cotacoes.js"></script>
+                
+               
+                      </div>
+                      
+                      <p id="atualizacao" class="update-info">Atualizando dados...</p>
+                    
+                      <!-- Load scripts -->
+                     
+                     
+                    </div>
+                    
+                    <!-- Estes dois elementos ficam fora do .precos-container -->
+                     <div>
+                    <div class="aviso-simulacao">*valores simulados</div>
+                    <a href="https://www.agrolink.com.br/cotacoes/" class="btn-mais-valores">Mais valores</a>
+                    </div>
+                </div>
+                
+                
+                <div class="card associados">
+                    <h3>Cooperados</h3>
+                    <p>Central de controle para os associados.</p>
+                    <a href="cooperados.html">Entrar</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TortoGrão. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
